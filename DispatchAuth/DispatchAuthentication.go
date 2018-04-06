@@ -59,13 +59,11 @@ func AddToken(reqObj *http.Request) (*http.Request, error) {
 		if err != nil {
 			return reqObj, err
 		} else {
-			reqObj.Header.Set("Bearer", _authResp.Auth0AccessToken)
-			//reqObj.Header.Set("Content-Type", "application/json")
+			reqObj.Header.Set("Bearer", _authResp.Auth0AccessToken)			
 		}
 
 	} else if _authResp.Auth0AccessToken != "" {
-		reqObj.Header.Set("Bearer", _authResp.Auth0AccessToken)
-		//reqObj.Header.Set("Content-Type", "application/json")
+		reqObj.Header.Set("Bearer", _authResp.Auth0AccessToken)		
 	}
 	return reqObj, err
 }
